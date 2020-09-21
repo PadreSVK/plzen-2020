@@ -10,6 +10,10 @@ namespace Basics
         {
             Console.WriteLine(NameWithBackingField);
             Console.WriteLine(NameWithBackingField2);
+            var properties = new Properties()
+            {
+                NameWithDefaultValue = "Karol"
+            };
         }
 
         private string nameWithBackingField;
@@ -28,5 +32,18 @@ namespace Basics
 
         public string Name { get; set; }
 
+        public string NameWithDefaultValue { get; set; } = "Albert";
+        public string NameWithDefaultInitValue { get; init; } = "Albert";
+
+
+        public Properties()
+        {
+            NameWithDefaultInitValue = "test";
+        }
+
+        public void TryUpdateValueInNameWithDefaultInitValue()
+        {
+            //this.NameWithDefaultInitValue = "aaa";
+        }
     }
 }

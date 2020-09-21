@@ -1,11 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace Basics
+﻿namespace Basics
 {
     public interface ISample
     {
         void Run();
     }
-
-
 }
