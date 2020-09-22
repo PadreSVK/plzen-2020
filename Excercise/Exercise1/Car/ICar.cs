@@ -1,10 +1,14 @@
-﻿using Exercise.Engine;
+﻿using Exercise.Exercise1.Engine;
 
-namespace Exercise.Car
+namespace Exercise.Exercise1.Car
 {
-    public interface ICar<T> where T : IEngine
+    public interface ICar<out T>
+        where T : IEngine
     {
         T Engine { get; }
+
+        // without generics
+        //IEngine Engine { get; }
         string Color { get; }
         string Name { get; }
         int ActualSpeed { get; }
@@ -12,5 +16,4 @@ namespace Exercise.Car
         void Accelerate(int speed);
         void Break();
     }
-
 }

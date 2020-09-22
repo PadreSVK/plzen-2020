@@ -1,11 +1,12 @@
 ﻿using System;
 
-namespace Exercise.Engine
+namespace Exercise.Exercise1.Engine
 {
     public class V8Engine : IEngine
     {
         private const int maxAvaliableAcceleration = 40;
 
+        public string InternalName => "Honey";
         public Transmission Transmission { get; }
 
         public void Accelerate(int acceleration)

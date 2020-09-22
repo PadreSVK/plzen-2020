@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercise.Car
+namespace Exercise.Exercise1.Car
 {
     public class EngineFailureException : CarFailureExceptionBase
     {

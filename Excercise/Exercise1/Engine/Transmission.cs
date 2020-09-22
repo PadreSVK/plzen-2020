@@ -1,4 +1,4 @@
-﻿namespace Exercise.Engine
+﻿namespace Exercise.Exercise1.Engine
 {
     public enum Transmission
     {

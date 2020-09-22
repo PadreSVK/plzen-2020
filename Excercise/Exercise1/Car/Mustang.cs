@@ -1,24 +1,27 @@
 ﻿using System;
-using Exercise.Engine;
+using Exercise.Exercise1.Engine;
 
-namespace Exercise.Car
+namespace Exercise.Exercise1.Car
 {
     public class Mustang : ICar<V8Engine>
     {
+        
         // without generics
-        public V8Engine Engine { get; set; }
         //public IEngine Engine { get; }
 
-
+        public V8Engine Engine { get; }
         public string Color { get; }
         public string Name { get; }
         public int ActualSpeed { get; }
         public int MaxSpeed { get; }
 
+        public Mustang()
+        {
+            Engine = new V8Engine();
+        }
         public void Accelerate(int speed)
         {
             var speedAfterAcceleration = ActualSpeed + speed;
-
             if (speedAfterAcceleration > MaxSpeed) throw new MaxSpeedExceededException("Max speed was exceeed");
             try
             {
