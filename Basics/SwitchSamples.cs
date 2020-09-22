@@ -19,23 +19,30 @@ namespace Basics
             ClassicSwitchInIfElse(Color.Black);
         }
 
-        public void ClassicSwitch(Color color)
+        public string ClassicSwitch(Color color)
         {
             switch (color)
             {
                 case Color.Red:
-                    Console.WriteLine("The color is red");
-                    break;
+                    return "The color is red";
                 case Color.Green:
-                    Console.WriteLine("The color is green");
-                    break;
+                    return "The color is green";
                 case Color.Blue:
-                    Console.WriteLine("The color is blue");
-                    break;
+                    return "The color is blue";
                 default:
-                    Console.WriteLine("The color is unknown.");
-                    break;
+                    return "The color is unknown";
             }
+        }
+        public string NewSwitch(Color color)
+        {
+            var result = color switch
+            {
+                Color.Red => "The color is red",
+                Color.Green => "The color is green",
+                Color.Blue => "The color is blue",
+                _ => "The color is unknown"
+            };
+            return result;
         }
 
         public void ClassicSwitchInIfElse(Color color)

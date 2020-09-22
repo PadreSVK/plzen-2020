@@ -24,19 +24,13 @@ namespace Basics
 
         public static double ComputeAreaModernSwitch(object shape)
         {
-            switch (shape)
+            return shape switch
             {
-                case Square s:
-                    return s.Side * s.Side;
-                case Circle c:
-                    return c.Radius * c.Radius * Math.PI;
-                case Rectangle r:
-                    return r.Height * r.Length;
-                default:
-                    throw new ArgumentException(
-                        "shape is not a recognized shape",
-                        nameof(shape));
-            }
+                Square s => s.Side * s.Side,
+                Circle c => c.Radius * c.Radius * Math.PI,
+                Rectangle r => r.Height * r.Length,
+                _ => throw new ArgumentException("shape is not a recognized shape", nameof(shape))
+            };
         }
 
         public string AssignSwitchExpression(Color color)
@@ -51,23 +45,14 @@ namespace Basics
 
         private static object CreateShape(string shapeDescription)
         {
-            switch (shapeDescription)
+            return shapeDescription switch
             {
-                case "circle":
-                    return new Circle(2);
-
-                case "square":
-                    return new Square(4);
-
-                case "large-circle":
-                    return new Circle(12);
-
-                case var o when (o?.Trim().Length ?? 0) == 0:
-                    // white space
-                    return null;
-                default:
-                    return "invalid shape description";
-            }
+                "circle" => new Circle(2),
+                "square" => new Square(4),
+                "large-circle" => new Circle(12),
+                var o when (o?.Trim().Length ?? 0) == 0 => null,
+                _ => "invalid shape description"
+            };
         }
 
         public static double ComputeArea_Version4(object shape)

@@ -1,15 +1,16 @@
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace Basics
 {
+    [Serializable]
     public class Attributes : ISample
     {
         public void Run()
         {
             TraceMessage("Something happened.");
         }
-
 
         public void TraceMessage(string message,
             [CallerMemberName] string memberName = "",
