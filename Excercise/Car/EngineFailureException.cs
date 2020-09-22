@@ -8,9 +8,9 @@ namespace Exercise.Car
         {
         }
 
-        public EngineFailureException(string message, Exception innerException) : base(message, innerException)
+        public EngineFailureException(string message, Exception innerException)
+            : base(message, innerException)
         {
         }
     }
-
 }

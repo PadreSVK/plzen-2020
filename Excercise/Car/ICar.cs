@@ -1,4 +1,6 @@
-﻿namespace Exercise.Car
+﻿using Exercise.Engine;
+
+namespace Exercise.Car
 {
     public interface ICar<T> where T : IEngine
     {

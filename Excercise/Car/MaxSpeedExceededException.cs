@@ -8,9 +8,9 @@ namespace Exercise.Car
         {
         }
 
-        public MaxSpeedExceededException(string message, Exception innerException) : base(message, innerException)
+        public MaxSpeedExceededException(string message, Exception innerException)
+            : base(message, innerException)
         {
         }
     }
-
 }

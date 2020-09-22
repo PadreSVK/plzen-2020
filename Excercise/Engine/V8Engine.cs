@@ -1,4 +1,6 @@
-﻿namespace Exercise.Engine
+﻿using System;
+
+namespace Exercise.Engine
 {
     public class V8Engine : IEngine
     {
@@ -9,14 +11,13 @@
         public void Accelerate(int acceleration)
         {
             if (acceleration > maxAvaliableAcceleration)
-            {
-                throw new MaxAvaliableAccelerationExceededException($"Max avaliable acceleration {maxAvaliableAcceleration} was exceeded by accceration {acceleration}. ");
-            }
+                throw new MaxAvaliableAccelerationExceededException(
+                    $"Max avaliable acceleration {maxAvaliableAcceleration} was exceeded by accceration {acceleration}. ");
         }
 
         public void Deccelerate(int acceleration)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

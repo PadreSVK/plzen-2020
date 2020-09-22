@@ -19,10 +19,7 @@ namespace Exercise.Car
         {
             var speedAfterAcceleration = ActualSpeed + speed;
 
-            if (speedAfterAcceleration > MaxSpeed)
-            {
-                throw new MaxSpeedExceededException("Max speed was exceeed");
-            }
+            if (speedAfterAcceleration > MaxSpeed) throw new MaxSpeedExceededException("Max speed was exceeed");
             try
             {
                 Engine.Accelerate(speed);
@@ -36,8 +33,7 @@ namespace Exercise.Car
         public void Break()
         {
             //todo
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
-
 }
