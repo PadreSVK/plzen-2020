@@ -6,39 +6,48 @@ namespace Basics
     // ReSharper disable ConvertToAutoProperty
     public class Properties : ISample
     {
-        public void Run()
+        public Properties(string nameWithBackingField)
         {
-            Console.WriteLine(NameWithBackingField);
-            Console.WriteLine(NameWithBackingField2);
-            var properties = new Properties()
+            MySuperNameWithBackingField = nameWithBackingField;
+            NameWithDefaultInitValue = "test";
+        }
+
+        public string MySuperNameWithBackingField { get; set; }
+
+        public string NameWithBackingField2 { get; protected set; }
+
+        public string NameGetOnly
+        {
+            get { return NameWithBackingField2; }
+        }
+
+        //Get only property
+        public string NameGetOnlyArrow
+        {
+            get
             {
-                NameWithDefaultValue = "Karol"
-            };
+                return $"{NameWithBackingField2} + {(MySuperNameWithBackingField.Contains("test") ? "test" : "nope")}";
+            }
         }
 
-        private string nameWithBackingField;
-        public string NameWithBackingField
-        {
-            get => nameWithBackingField;
-            set => nameWithBackingField = value;
-        }
-
-        private string nameWithBackingField2;
-        public string NameWithBackingField2
-        {
-            get { return nameWithBackingField2; }
-            set { nameWithBackingField2 = value; }
-        }
 
         public string Name { get; set; }
 
         public string NameWithDefaultValue { get; set; } = "Albert";
         public string NameWithDefaultInitValue { get; init; } = "Albert";
 
-
-        public Properties()
+        public void Run()
         {
-            NameWithDefaultInitValue = "test";
+            Console.WriteLine(MySuperNameWithBackingField);
+            Console.WriteLine(NameWithBackingField2);
+
+            NameWithBackingField2 = "dasdas";
+            var tes = NameWithBackingField2;
+
+            var properties = new Properties("")
+            {
+                NameWithDefaultInitValue = "Karol"
+            };
         }
 
         public void TryUpdateValueInNameWithDefaultInitValue()
@@ -47,5 +56,3 @@ namespace Basics
         }
     }
 }
-
-
