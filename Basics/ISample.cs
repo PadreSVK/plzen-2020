@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Basics
+﻿namespace Basics
 {
     public interface ISample
     {
