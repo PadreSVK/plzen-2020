@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise.Exercise2
 {
     public abstract class Person
     {
+        private void PrivateMethod()
+        {
+            Console.WriteLine("private method");
+        }
         public virtual void SayHello()
         {
             Console.WriteLine("Hello from Person");
@@ -21,19 +21,5 @@ namespace Exercise.Exercise2
         }
 
         protected abstract void SecretScream(string words);
-    }
-
-    public class Manager: Person
-    {
-        public override void Scream(string words)
-        {
-            Console.WriteLine("scream from Manager");
-
-        }
-
-        protected override void SecretScream(string words)
-        {
-            Console.WriteLine("secret Scream from ");
-        }
     }
 }
