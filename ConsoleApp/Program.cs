@@ -10,14 +10,15 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            //new Attributes().Run();
 
-            //new Namespace();
-            //new Basics.Test.Namespace();
 
-            //new CtorFinalizer().Run();
-            //new Disposable().Run();
+            new Namespace().Run();
+            new Basics.Test.Namespace().Run();
+
+            new CtorFinalizer().Run();
+            new Disposable().Run();
             new Exceptions().Run();
+            new Attributes().Run();
         }
     }
 }
