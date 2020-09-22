@@ -1,5 +1,5 @@
 # Podporne materialy pre školenie Plzeň 21.9 - 25.9 2020
 
-## Prerekvizity
+## Materialy
 
-* Download [.NET 5 rc](https://dotnet.microsoft.com/download/dotnet/5.0)
+> [link](https://1drv.ms/u/s!As4zfGOOdFqTjOBXTBlKAjK9nU8x2w?e=Etxflk)
