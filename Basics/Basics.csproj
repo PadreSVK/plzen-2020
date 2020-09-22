@@ -6,4 +6,8 @@
     <!--<LangVersion>preview</LangVersion>-->
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ReflectionSupportProject\ReflectionSupportProject.csproj" />
+  </ItemGroup>
+
 </Project>
