@@ -2,7 +2,7 @@
 {
     public class Calculator
     {
-        public double Number { get; private set; }
+        public double Number { get; private set; } = 100;
 
         public static double Pi => 3.1428;
 
