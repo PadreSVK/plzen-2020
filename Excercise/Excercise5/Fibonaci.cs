@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Exercise
+namespace Exercise.Excercise5
 {
     public class Fibonaci
     {
