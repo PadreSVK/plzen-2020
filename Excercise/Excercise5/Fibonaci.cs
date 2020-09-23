@@ -2,7 +2,7 @@
 
 namespace Exercise
 {
-    public class Examples1
+    public class Fibonaci
     {
         private static IEnumerable<int> GetFibonacci()
         {
