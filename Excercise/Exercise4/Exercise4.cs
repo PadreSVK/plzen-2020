@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace Exercise.Excercise4
+namespace Exercise.Exercise4
 {
-    public class Excercise4
+    public class Exercise4
     {
         public static IEnumerable<string> GetStrings(int maxNumberOfItems)
         {
