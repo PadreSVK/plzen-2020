@@ -12,10 +12,10 @@ namespace Basics
             dynamic d4 = System.Diagnostics.Process.GetProcesses();
 
 
-            int @int = d1;
-            string @string = d2;
-            DateTime dateTime = d3;
-            System.Diagnostics.Process[] processes = d4;
+            //int @int = d1;
+            //string @string = d2;
+            //DateTime dateTime = d3;
+            //System.Diagnostics.Process[] processes = d4;
         }
     }
 }
