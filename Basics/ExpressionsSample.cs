@@ -7,6 +7,30 @@ namespace Basics
     {
         public void Run()
         {
+            Sample1();
+            Sample2();
+        }
+
+        private static void Sample1()
+        {
+            Expression<Func<int, bool>> expr = num => num < 5;
+
+            // Compiling the expression tree into a delegate.  
+            Func<int, bool> result = expr.Compile();
+
+            // Invoking the delegate and writing the result to the console.  
+            Console.WriteLine(result(4));
+
+            // Prints True.  
+
+            // You can also use simplified syntax  
+            // to compile and run an expression tree.  
+            // The following line can replace two previous statements.  
+            Console.WriteLine(expr.Compile()(4));
+        }
+
+        private static void Sample2()
+        {
             var blockExpr = Expression.Block(
                 Expression.Call(
                     null,
