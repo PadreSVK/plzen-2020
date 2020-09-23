@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Basics
@@ -8,13 +9,40 @@ namespace Basics
     {
         public void Run()
         {
+            Sample0();
             Sample1();
             Sample3();
         }
 
+        private void Sample0()
+        {
+            var strings = new[] {"Tom", "Dick", "Mary", "Harry", "Jay"};
+            var queryFluentSyntax = strings
+                .Where(name => name.Contains("a"))
+                .OrderBy(nameAfterWhere => nameAfterWhere.Length)
+                .Select(orderedName => orderedName.ToUpper())
+                .Where(n => false);
+
+
+            var test = new {Name = "MySuperName", Age = 44};
+            var items = queryFluentSyntax.ToList();
+            var itemsBetter = items.Select((value, i) => new {i, value});
+
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+
+            var queryQuerySyntax =
+                from name in strings
+                where name.Contains("a")
+                orderby name.Length
+                select name.ToUpper();
+        }
+
         public void Sample1()
         {
-            var numbers = new int[7] { 0, 1, 2, 3, 4, 5, 6 };
+            var numbers = new int[7] {0, 1, 2, 3, 4, 5, 6};
 
             var numQuery =
                 from num in numbers
@@ -27,9 +55,10 @@ namespace Basics
                 Console.Write("{0,1} ", num);
             }
         }
+
         public void Sample2()
         {
-            var musos = new []{ "David Gilmour", "Roger Waters", "Rick Wright", "Nick Mason" };
+            var musos = new[] {"David Gilmour", "Roger Waters", "Rick Wright", "Nick Mason"};
 
             IEnumerable<string> queryFluent = musos.OrderBy(m => m.Split().Last());
 
@@ -39,15 +68,14 @@ namespace Basics
         }
 
 
-
         public void Sample3()
         {
             var students = new List<Student>
             {
                 new Student
                 {
-                    First = "Svetlana",
-                    Last = "Omelchenko",
+                    FirstName = "Svetlana",
+                    LastName = "Omelchenko",
                     ID = 111,
                     Street = "123 Main Street",
                     City = "Seattle",
@@ -55,8 +83,8 @@ namespace Basics
                 },
                 new Student
                 {
-                    First = "Claire",
-                    Last = "O’Donnell",
+                    FirstName = "Claire",
+                    LastName = "O’Donnell",
                     ID = 112,
                     Street = "124 Main Street",
                     City = "Redmond",
@@ -64,8 +92,8 @@ namespace Basics
                 },
                 new Student
                 {
-                    First = "Sven",
-                    Last = "Mortensen",
+                    FirstName = "Sven",
+                    LastName = "Mortensen",
                     ID = 113,
                     Street = "125 Main Street",
                     City = "Lake City",
@@ -81,10 +109,59 @@ namespace Basics
                 new Teacher {First = "Michiyo", Last = "Sato", ID = 972, City = "Tacoma"}
             };
 
+            var ofTypeWhere = students.Where(s => s.GetType() == typeof(string));
+            var ofTypeWhere2 = students.Where(s => s is string);
+            var ofType = students.OfType<string>();
+
+            var select = students.Select(i => i.FirstName).Select(i => i.Length);
+            var sum = select.Max();
+
+            var sum2 = students.Max(s => s.FirstName.Length);
+            var sum3 = students.Max(s => s?.FirstName.Length ?? 0);
+
+            if (students.Count > 0)
+            {
+                //code
+            }
+
+            if (students.Any(s => s.FirstName == "Karol"))
+            {
+                //code
+            }
+
+            Func<Student, bool> myPrediction = s => s.FirstName == "Karol";
+            if (students.Any(myPrediction))
+            {
+                //code
+            }
+
+            if (students.All(myPrediction))
+            {
+            }
+
+            var secondPage = students.Skip(10).Take(10);
+
+            var take = students.SkipWhile(s => s.FirstName == "Fero").Take(10);
+
+            var empty = Enumerable.Empty<Student>();
+
+            var range = Enumerable.Range(0,20).Select(_ => new {Age= 15, Name="Jzoo"});
+
+            var enumerable = students
+                .Where(s => s.City == "Seattle")
+                .Select(s => new {HAHA = s.FirstName, HEHE = s.LastName, Test = "selectbycity"})
+                .Where(s => s.Test == "Seattle")
+                .Select(i => i.Test)
+                .Where(s => s.Contains("ha"));
+
+            var itemsTest = enumerable.ToList();
+            var item = itemsTest[0];
+
+
             // Create the query.
             var peopleInSeattle = (from student in students
                     where student.City == "Seattle"
-                    select student.Last)
+                    select student.LastName)
                 .Concat(from teacher in teachers
                     where teacher.City == "Seattle"
                     select teacher.Last);
@@ -97,14 +174,17 @@ namespace Basics
             }
         }
 
+
         private class Student
         {
             public List<int> Scores { get; set; }
-            public string First { get; set; }
-            public string Last { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
             public int ID { get; set; }
             public string Street { get; set; }
             public string City { get; set; }
+
+            public int? Age { get; set; }
         }
 
         private class Teacher
@@ -113,6 +193,25 @@ namespace Basics
             public string Last { get; set; }
             public int ID { get; set; }
             public string City { get; set; }
+        }
+    }
+
+    [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
+    public static class Extensions
+    {
+        public static IEnumerable<T> MySkipWhile<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate)
+        {
+            return enumerable;
+        }
+
+        public static void Test()
+        {
+            var enumerable = Enumerable.Empty<int>();
+
+            // ReSharper disable once InvokeAsExtensionMethod
+            Extensions.MySkipWhile(enumerable,i => i > 5);
+
+            enumerable.MySkipWhile(i => i > 5);
         }
     }
 }

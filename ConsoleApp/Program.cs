@@ -1,6 +1,6 @@
 ﻿using System;
 using Basics;
-using Basics.OtherTest;
+using Basics.Test;
 
 namespace ConsoleApp
 {
@@ -20,6 +20,8 @@ namespace ConsoleApp
             new LambdaSample().Run();
             new ExpressionsSample().Run();
             new EnumerableSample().Run();
+            new ReflectionSample().Run();
+            new LINQSample().Run();
         }
     }
 }
