@@ -2,12 +2,11 @@
 using Basics;
 using Basics.OtherTest;
 
-
 namespace ConsoleApp
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             new Namespace().Run();
@@ -17,6 +16,9 @@ namespace ConsoleApp
             new Exceptions().Run();
             new Attributes().Run();
             new ReflectionSample().Run();
+            new EnumerableSample().Run();
+            new LambdaSample().Run();
+            new ExpressionsSample().Run();
             new EnumerableSample().Run();
         }
     }
