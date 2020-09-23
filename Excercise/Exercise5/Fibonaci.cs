@@ -4,7 +4,7 @@ namespace Exercise.Exercise5
 {
     public class Fibonaci
     {
-        private static IEnumerable<int> GetFibonacci()
+        public static IEnumerable<int> GetFibonacci()
         {
             var first = 0;
             var second = 1;

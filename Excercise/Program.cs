@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Exercise.Exercise1.Car;
 using Exercise.Exercise1.Engine;
 using Exercise.Exercise3;
+using Exercise.Exercise5;
 
 namespace Exercise
 {
@@ -27,6 +29,11 @@ namespace Exercise
 
             var allCarsByEngineStaticCalling = ExtensionMethods.GetAllCarsByEngine<V8Engine>(cars);
             IEnumerable<ICar<IEngine>> allCarsByEngine = cars.GetAllCarsByEngine<V8Engine>();
+
+            foreach (var i in Fibonaci.GetFibonacci().Skip(6).Take(15))
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
