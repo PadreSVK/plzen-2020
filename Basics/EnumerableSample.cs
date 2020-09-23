@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MyNamespace;
 
 namespace Basics
 {
@@ -8,10 +9,32 @@ namespace Basics
     {
         public void Run()
         {
+            var maxCount = 2;
+            var count = 0;
+            foreach (var i in SimpleEnumerable())
+            {
+                if (i < 2)
+                {
+                    count++;
+                }
+
+                Console.WriteLine(i);
+                if (maxCount == count)
+                {
+                    break;
+                }
+            }
+
             foreach (var item in new TestEnumerableDuckTyping())
             {
                 Console.WriteLine(item);
             }
+
+            var testEnumerable = new TestEnumerable();
+            var enumerator = testEnumerable.GetEnumerator().MoveNext();
+
+            IEnumerable testEnumerable2 = testEnumerable;
+            var enumerator1 = testEnumerable2.GetEnumerator().MoveNext();
 
             foreach (var item in new TestEnumerable())
             {
@@ -26,12 +49,18 @@ namespace Basics
 
         public IEnumerable<int> SimpleEnumerable()
         {
+            Console.WriteLine("first");
             yield return 1;
+            Console.WriteLine("second");
             yield return 2;
+            Console.WriteLine("third");
             yield return 5;
+            Console.WriteLine("4th");
             //yield break;
             yield return 1;
+            Console.WriteLine("5th");
             yield return 8;
+            Console.WriteLine("6th");
             yield return 0;
         }
 
@@ -53,7 +82,7 @@ namespace Basics
             //public IEnumerator GetEnumerator()
             public IEnumerator<string> GetEnumerator()
             {
-                foreach (var o in Names)
+                foreach (string o in Names)
                 {
                     if (o == null)
                     {
@@ -65,12 +94,12 @@ namespace Basics
             }
         }
 
-        public class TestEnumerable : IEnumerable
+        public class TestEnumerable : IEnumerable<string>
         {
             private static readonly string[] Names = {"Name1", "Name2", "Name3"};
 
             // IEnumerable Member  
-            public IEnumerator GetEnumerator()
+            public IEnumerator<string> GetEnumerator()
             {
                 foreach (var o in Names)
                 {
@@ -81,6 +110,11 @@ namespace Basics
 
                     yield return o;
                 }
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
             }
         }
     }
