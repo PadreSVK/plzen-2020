@@ -7,6 +7,5 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="16.5.132" /> <!--some analyzer from nuget https://www.nuget.org/packages/Microsoft.VisualStudio.Threading.Analyzers/ -->
-    <PackageReference Update="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
   </ItemGroup>
 </Project>
