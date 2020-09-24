@@ -1,0 +1,5 @@
+﻿<RuleSet Name="Project Test Rules"   ToolsVersion="12.0">
+  <Rules AnalyzerId="Microsoft.VisualStudio.Threading.Analyzers" RuleNamespace="Microsoft.VisualStudio.Threading.Analyzers">
+    <Rule Id="VSTHRD200" Action="Error" />
+  </Rules>
+</RuleSet>

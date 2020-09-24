@@ -1,0 +1,10 @@
+# NOTE: Requires **VS2019 16.3** or later
+
+# Project Test Rules
+# Description: project.ruleset
+
+# Code files
+[*.{cs,vb}]
+
+
+dotnet_diagnostic.VSTHRD200.severity = error
