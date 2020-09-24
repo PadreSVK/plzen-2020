@@ -10,7 +10,7 @@ namespace Basics
         {
             var myFirstGenericClass = new MyFirstGenericClass<int>();
             var a = myFirstGenericClass.SomeType;
-            var test = (string) null;
+            var test = (string)null;
 
             var myFirstGenericMethod = MyFirstGenericMethod(new SimpleEntity());
         }

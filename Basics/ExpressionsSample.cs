@@ -34,12 +34,12 @@ namespace Basics
             var blockExpr = Expression.Block(
                 Expression.Call(
                     null,
-                    typeof(Console).GetMethod("Write", new[] {typeof(string)}),
+                    typeof(Console).GetMethod("Write", new[] { typeof(string) }),
                     Expression.Constant("Hello ")
                 ),
                 Expression.Call(
                     null,
-                    typeof(Console).GetMethod("WriteLine", new[] {typeof(string)}),
+                    typeof(Console).GetMethod("WriteLine", new[] { typeof(string) }),
                     Expression.Constant("World!")
                 ),
                 Expression.Constant(42)

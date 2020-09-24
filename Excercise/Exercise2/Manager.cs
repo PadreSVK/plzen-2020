@@ -2,7 +2,7 @@
 
 namespace Exercise.Exercise2
 {
-    public class Manager: Person
+    public class Manager : Person
     {
         public override void Scream(string words)
         {

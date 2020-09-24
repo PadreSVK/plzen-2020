@@ -23,11 +23,11 @@ namespace Exercise.Exercise6
 
         public static void Test()
         {
-            IEnumerable<int> enumerable = Enumerable.Range(0,20);
+            IEnumerable<int> enumerable = Enumerable.Range(0, 20);
 
             var take = enumerable.MyWhere((int i) => i > 5).Take(5);
             var list = take.ToList();
         }
-        
+
     }
 }

@@ -20,7 +20,7 @@ namespace Basics
             //    Console.WriteLine();
             //    Console.WriteLine();
             //};
-              
+
             //Action<string> greet2 = (_)  =>
             //{
             //    Console.WriteLine("Hello from lambda");
@@ -66,7 +66,7 @@ namespace Basics
         }
 
 
-        void CreateErrorMessage<T>(Func<T,string> getUserName) where T: new()
+        void CreateErrorMessage<T>(Func<T, string> getUserName) where T : new()
         {
             var user = new T();
 

@@ -2,7 +2,7 @@
 
 namespace Basics
 {
-    public class CtorFinalizer: ISample
+    public class CtorFinalizer : ISample
     {
         public void Run()
         {
@@ -10,11 +10,11 @@ namespace Basics
             var myClass2 = new MyClass(55);
         }
 
-        public abstract class MySuperBase: MySuperBaseBase
+        public abstract class MySuperBase : MySuperBaseBase
         {
-            protected MySuperBase(int aa): base(aa)
+            protected MySuperBase(int aa) : base(aa)
             {
-                Console.WriteLine("MySuperBase " + aa); 
+                Console.WriteLine("MySuperBase " + aa);
             }
         }
 
@@ -31,7 +31,7 @@ namespace Basics
             {
                 Console.WriteLine("MyClass");
             }
-            public MyClass(int arg1): base(66)
+            public MyClass(int arg1) : base(66)
             {
                 Console.WriteLine("MyClass");
             }
