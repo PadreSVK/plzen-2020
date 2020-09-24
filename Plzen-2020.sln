@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolutionWidePackageUsageSam
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewVsOldCsproj", "NewVsOldCsproj", "{56795161-A403-42C8-AED2-F6A6B145CA08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "OldCsproj\ConsoleApp1.csproj", "{61EB6167-D61A-4992-B878-0FC834EABB4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldCsproj", "OldCsproj\OldCsproj.csproj", "{61EB6167-D61A-4992-B878-0FC834EABB4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
