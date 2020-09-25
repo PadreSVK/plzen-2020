@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewVsOldCsproj", "NewVsOldC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldCsproj", "OldCsproj\OldCsproj.csproj", "{61EB6167-D61A-4992-B878-0FC834EABB4D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AsyncAwait", "AsyncAwait", "{2C961BB0-4E4F-4D97-8419-5C394A5D5047}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwaitConsoleApp", "AsyncAwaitConsoleApp\AsyncAwaitConsoleApp.csproj", "{D4698F51-6CF0-4329-BB80-3A03B5D1B193}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,10 @@ Global
 		{61EB6167-D61A-4992-B878-0FC834EABB4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61EB6167-D61A-4992-B878-0FC834EABB4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61EB6167-D61A-4992-B878-0FC834EABB4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4698F51-6CF0-4329-BB80-3A03B5D1B193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4698F51-6CF0-4329-BB80-3A03B5D1B193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4698F51-6CF0-4329-BB80-3A03B5D1B193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4698F51-6CF0-4329-BB80-3A03B5D1B193}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +90,7 @@ Global
 		{BC23CCF2-0F1A-44C9-92A3-BD4F95B703CB} = {293CBAFC-0C70-40AC-BDE9-EAFB65A7BB68}
 		{0F90D264-16B0-4114-93B5-DD51FBA23F76} = {56795161-A403-42C8-AED2-F6A6B145CA08}
 		{61EB6167-D61A-4992-B878-0FC834EABB4D} = {56795161-A403-42C8-AED2-F6A6B145CA08}
+		{D4698F51-6CF0-4329-BB80-3A03B5D1B193} = {2C961BB0-4E4F-4D97-8419-5C394A5D5047}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {335E8A07-624D-4825-955C-3AB6AD1245DE}
