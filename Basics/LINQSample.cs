@@ -16,7 +16,7 @@ namespace Basics
 
         private void Sample0()
         {
-            var strings = new[] {"Tom", "Dick", "Mary", "Harry", "Jay"};
+            var strings = new[] { "Tom", "Dick", "Mary", "Harry", "Jay" };
             var queryFluentSyntax = strings
                 .Where(name => name.Contains("a"))
                 .OrderBy(nameAfterWhere => nameAfterWhere.Length)
@@ -24,9 +24,9 @@ namespace Basics
                 .Where(n => false);
 
 
-            var test = new {Name = "MySuperName", Age = 44};
+            var test = new { Name = "MySuperName", Age = 44 };
             var items = queryFluentSyntax.ToList();
-            var itemsBetter = items.Select((value, i) => new {i, value});
+            var itemsBetter = items.Select((value, i) => new { i, value });
 
             foreach (var item in items)
             {
@@ -42,7 +42,7 @@ namespace Basics
 
         public void Sample1()
         {
-            var numbers = new int[7] {0, 1, 2, 3, 4, 5, 6};
+            var numbers = new int[7] { 0, 1, 2, 3, 4, 5, 6 };
 
             var numQuery =
                 from num in numbers
@@ -58,13 +58,13 @@ namespace Basics
 
         public void Sample2()
         {
-            var musos = new[] {"David Gilmour", "Roger Waters", "Rick Wright", "Nick Mason"};
+            var musos = new[] { "David Gilmour", "Roger Waters", "Rick Wright", "Nick Mason" };
 
             IEnumerable<string> queryFluent = musos.OrderBy(m => m.Split().Last());
 
             var query = from m in musos
-                orderby m.Split().Last()
-                select m;
+                        orderby m.Split().Last()
+                        select m;
         }
 
 
@@ -145,11 +145,11 @@ namespace Basics
 
             var empty = Enumerable.Empty<Student>();
 
-            var range = Enumerable.Range(0,20).Select(_ => new {Age= 15, Name="Jzoo"});
+            var range = Enumerable.Range(0, 20).Select(_ => new { Age = 15, Name = "Jzoo" });
 
             var enumerable = students
                 .Where(s => s.City == "Seattle")
-                .Select(s => new {HAHA = s.FirstName, HEHE = s.LastName, Test = "selectbycity"})
+                .Select(s => new { HAHA = s.FirstName, HEHE = s.LastName, Test = "selectbycity" })
                 .Where(s => s.Test == "Seattle")
                 .Select(i => i.Test)
                 .Where(s => s.Contains("ha"));
@@ -160,11 +160,11 @@ namespace Basics
 
             // Create the query.
             var peopleInSeattle = (from student in students
-                    where student.City == "Seattle"
-                    select student.LastName)
+                                   where student.City == "Seattle"
+                                   select student.LastName)
                 .Concat(from teacher in teachers
-                    where teacher.City == "Seattle"
-                    select teacher.Last);
+                        where teacher.City == "Seattle"
+                        select teacher.Last);
 
             Console.WriteLine("The following students and teachers live in Seattle:");
             // Execute the query.
@@ -209,7 +209,7 @@ namespace Basics
             var enumerable = Enumerable.Empty<int>();
 
             // ReSharper disable once InvokeAsExtensionMethod
-            Extensions.MySkipWhile(enumerable,i => i > 5);
+            Extensions.MySkipWhile(enumerable, i => i > 5);
 
             enumerable.MySkipWhile(i => i > 5);
         }

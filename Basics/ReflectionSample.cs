@@ -13,7 +13,7 @@ namespace Basics
             var type = i.GetType();
             Console.WriteLine(type);
 
-            var dateTime = (DateTime) Activator.CreateInstance(typeof(DateTime));
+            var dateTime = (DateTime)Activator.CreateInstance(typeof(DateTime));
 
             var assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var dllPath = Path.Combine(assemblyFolder, "ReflectionSupportProject.dll");
@@ -28,7 +28,7 @@ namespace Basics
             var numberPropertyInfo = calcType.GetProperty("Number");
 
             // get value of property: public double Number
-            var value = (double) numberPropertyInfo.GetValue(calcInstance, null);
+            var value = (double)numberPropertyInfo.GetValue(calcInstance, null);
 
             // set value of property: public double Number
             numberPropertyInfo.SetValue(calcInstance, 10.0, null);

@@ -29,7 +29,7 @@ namespace Exercise.Exercise7
 
 
             var v8Engines2 = cars.Select(i => i.Engine).OfType<V8Engine>().ToList();
-            var enginesOfType = cars.EnginesOfType<V8Engine>().ToDictionary(i=> i.VIN);
+            var enginesOfType = cars.EnginesOfType<V8Engine>().ToDictionary(i => i.VIN);
         }
     }
 

@@ -33,7 +33,7 @@ namespace Basics
             if (TryConvert(test, out var resultNumber)) Console.WriteLine(resultNumber);
 
             // named parameters
-            NamedParameters(sex: "male",name: "Jožo", age: 25);
+            NamedParameters(sex: "male", name: "Jožo", age: 25);
         }
 
         private void NamedParameters(int age, string name, string sex)
@@ -56,7 +56,7 @@ namespace Basics
         {
             if (obj is int)
             {
-                number = obj is int ? (int) obj : 0;
+                number = obj is int ? (int)obj : 0;
                 return true;
             }
 

@@ -7,8 +7,8 @@ namespace Basics
     {
         public void Run()
         {
-            Console.WriteLine(ComputeAreaModernSwitch(new Rectangle(8,9)));
-           
+            Console.WriteLine(ComputeAreaModernSwitch(new Rectangle(8, 9)));
+
             Console.WriteLine(AssignSwitchExpression(Color.Green));
             Console.WriteLine(CreateShape("circle"));
 
@@ -104,7 +104,7 @@ namespace Basics
         {
             Fruit fruit = new Apple()
             {
-               Color = Color.Green
+                Color = Color.Green
             };
 
             var message = fruit switch
@@ -123,7 +123,7 @@ namespace Basics
         }
         public class Apple : Fruit
         {
-            
+
         }
 
         public enum Color

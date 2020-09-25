@@ -77,7 +77,7 @@ namespace Basics
 
         public class TestEnumerableDuckTyping
         {
-            private static readonly string[] Names = {"Name1", "Name2", "Name3"};
+            private static readonly string[] Names = { "Name1", "Name2", "Name3" };
 
             //public IEnumerator GetEnumerator()
             public IEnumerator<string> GetEnumerator()
@@ -96,7 +96,7 @@ namespace Basics
 
         public class TestEnumerable : IEnumerable<string>
         {
-            private static readonly string[] Names = {"Name1", "Name2", "Name3"};
+            private static readonly string[] Names = { "Name1", "Name2", "Name3" };
 
             // IEnumerable Member  
             public IEnumerator<string> GetEnumerator()

@@ -9,7 +9,7 @@ namespace Basics
             //var obj = new MyDisposableObject();
             //try
             //{
-                
+
             //    throw new Exception("exception in using");
             //}
             //finally

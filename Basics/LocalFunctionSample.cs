@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Basics
 {
-    public class LocalFunctionSample: ISample
+    public class LocalFunctionSample : ISample
     {
         public void Run()
         {
@@ -21,7 +21,7 @@ namespace Basics
                 return (T)value;
             }
 
-            int getAge(string name) 
+            int getAge(string name)
             {
                 return 5;
             }
