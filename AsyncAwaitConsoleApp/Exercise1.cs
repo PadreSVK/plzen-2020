@@ -5,8 +5,15 @@ namespace AsyncAwaitConsoleApp
     public class Exercise1 : IExercise
     {
         //inheritance Task<string> : Task
-        public Task RunAsync() => GetStringAsync();
+        public async Task RunAsync()
+        {
+            string result = await GetStringAsync();
+        }
 
-        public Task<string> GetStringAsync() => Task.FromResult("hi from task");
+        public async Task<string> GetStringAsync()
+        {
+            return "asdasdas";
+            //return await Task.FromResult("hi from task");
+        }
     }
 }
