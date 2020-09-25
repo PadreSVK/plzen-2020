@@ -14,12 +14,16 @@ namespace AsyncAwaitConsoleApp
             var cancellationTokenSource = new CancellationTokenSource();
             Task.Run(() => TestCTSourceAsync(cancellationTokenSource));
             Task.Run(() => TestCTAsync(cancellationTokenSource.Token));
+            Console.ReadKey();
             return Task.CompletedTask;
         }
 
         public static async Task TestCTSourceAsync(CancellationTokenSource cancellationTokenSource)
         {
             Console.WriteLine("TestCTSourceAsync start");
+            
+            await Task.Delay(3000);
+            Console.WriteLine("wait after 3sec");
             await Task.Delay(3000);
             cancellationTokenSource.Cancel();
             Console.WriteLine("TestCTSourceAsync end");
@@ -32,7 +36,8 @@ namespace AsyncAwaitConsoleApp
             while (!cancellationToken.IsCancellationRequested)
             {
                 Console.WriteLine("TestCTAsync got sleep");
-                await Task.Delay(1000, cancellationToken);
+                await Task.Delay(1000);
+                //await Task.Delay(1000, cancellationToken);
             }
 
             Console.WriteLine("TestCTAsync end");
