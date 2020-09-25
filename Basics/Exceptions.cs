@@ -22,10 +22,6 @@ namespace Basics
         {
 
             string test = null;
-
-
-
-
             //try catch finally
             try
             {
