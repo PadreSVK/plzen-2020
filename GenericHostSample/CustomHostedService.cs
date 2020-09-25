@@ -28,6 +28,7 @@ namespace GenericHostSample
         {
             logger.LogInformation("Custom hosted service started");
             //https://beeceptor.com/console/plzen-2020
+            // https://plzen-2020.free.beeceptor.com/
             var httpResponseMessage = await httpClient.GetAsync("https://plzen-2020.free.beeceptor.com/my/api/path", cancellationToken);
             var responseMessage = await httpResponseMessage.Content.ReadAsStringAsync();
             logger.LogInformation(responseMessage);

@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericHostSample", "Generi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp Basics", "CSharp Basics", "{E1315B8D-290D-4227-BEA2-CB2DF805DB35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService", "WorkerService\WorkerService.csproj", "{061ECB39-9503-4C32-B406-E1BE010C878C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkerService", "WorkerService\WorkerService.csproj", "{061ECB39-9503-4C32-B406-E1BE010C878C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{1AAA508C-937C-4474-A029-303F3B254A86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,10 @@ Global
 		{061ECB39-9503-4C32-B406-E1BE010C878C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{061ECB39-9503-4C32-B406-E1BE010C878C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{061ECB39-9503-4C32-B406-E1BE010C878C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AAA508C-937C-4474-A029-303F3B254A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AAA508C-937C-4474-A029-303F3B254A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AAA508C-937C-4474-A029-303F3B254A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AAA508C-937C-4474-A029-303F3B254A86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +126,7 @@ Global
 		{ED5610E1-A242-48F6-A325-72B935DC71A7} = {3420D8E6-C125-4B40-BF3B-A19EC131DDE6}
 		{3B0374C4-AC5F-4359-8E88-D674DD035443} = {3420D8E6-C125-4B40-BF3B-A19EC131DDE6}
 		{061ECB39-9503-4C32-B406-E1BE010C878C} = {3420D8E6-C125-4B40-BF3B-A19EC131DDE6}
+		{1AAA508C-937C-4474-A029-303F3B254A86} = {3420D8E6-C125-4B40-BF3B-A19EC131DDE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {335E8A07-624D-4825-955C-3AB6AD1245DE}
